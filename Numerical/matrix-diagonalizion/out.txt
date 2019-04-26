@@ -1,0 +1,65 @@
+PART A:
+
+A random matrix A has been generated:
+A=
+0.016301 0.242887 0.137232 0.804177 0.156679 
+0.242887 0.400944 0.129790 0.108809 0.998925 
+0.137232 0.129790 0.218257 0.512932 0.839112 
+0.804177 0.108809 0.512932 0.612640 0.296032 
+0.156679 0.998925 0.839112 0.296032 0.637552 
+
+The jacobi diagonalization with cyclic sweeps has been used on A.
+Calculating the matrix product V^T*A*V=D. D should be a diagonal matrix
+D=
+-0.777708 0.000000 -0.000000 -0.000000 -0.000000 
+0.000000 -0.613996 -0.000000 0.000000 -0.000000 
+-0.000000 -0.000000 0.170551 -0.000000 0.000000 
+0.000000 0.000000 -0.000000 0.915377 -0.000000 
+-0.000000 0.000000 0.000000 -0.000000 2.191470 
+
+The diagonal should be equal to the eigenvalues
+-0.777708 -0.613996 0.170551 0.915377 2.19147 
+
+The times to diagonalize a mxm matrix are printed to time.txt and plot in plot.svg
+
+PART B:
+
+A random matrix A is generated
+A=
+0.308858 0.689064 0.385187 0.202248 0.334971 
+0.689064 0.713356 0.973302 0.931523 0.805133 
+0.385187 0.973302 0.342705 0.508847 0.337424 
+0.202248 0.931523 0.508847 0.184839 0.973571 
+0.334971 0.805133 0.337424 0.973571 0.922517 
+
+The off-diagonal elements are eliminated in the first row D=V^T*A*V
+D=
+-0.699552 -0.000000 0.000000 -0.000000 0.000000 
+-0.000000 1.391263 0.933681 0.579731 0.910412 
+0.000000 0.933681 0.480239 0.593193 0.449928 
+-0.000000 0.579731 0.593193 0.336717 0.961186 
+0.000000 0.910412 0.449928 0.961186 0.963609 
+
+The first diagonal element should be equal to the first value in the following vector:
+-0.699552 1.39126 0.480239 0.336717 0.963609 
+
+The off-diagonal elements are eliminated in the first two rows D=V^T*A*V
+D=
+-0.699552 0.000000 0.000000 0.000000 0.000000 
+0.000000 -0.487347 0.000000 -0.000000 -0.000000 
+0.000000 0.000000 1.969651 0.716752 1.074124 
+0.000000 -0.000000 0.716752 0.535199 0.763890 
+0.000000 -0.000000 1.074124 0.763890 1.154325 
+
+The first two diagonal elements should be equal to the first two values in the vector
+-0.699552 -0.487347 1.96965 0.535199 1.15433 
+The angle is decided by tan(2*phi)=2*Aqp/(Aqq-App). If Aqq>App the angle will be small and the dominant term in the rotation matrix will be the cosine corresponding to an identity operation.
+If App>Aqq we will interchange the values leading to smaller values on the upper diagonals
+We can get the higher eigenvalues on upper diagonals by calculating the angle as tan(2*phi)=-2*Aqp/(-Aqq+App).
+
+I now print the amount of sweeps to fully diagonalize a symmetric 200x200 matrix using cyclic sweeps
+and the amount of sweeps to only get the lowest eigenvalue from the first rows.
+Sweeps to fully diagonalize a 200x200 matrix: 50
+Sweeps to only find the lowest eigenvalue in a 200x200 matrix: 21
+It is seen that for large matrices it is faster if one is only interested in a certain amount of eigenvalues.
+

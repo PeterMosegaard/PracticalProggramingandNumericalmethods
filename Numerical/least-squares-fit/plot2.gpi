@@ -1,0 +1,16 @@
+set terminal svg background "white"
+set output "plot2.svg"
+set xlabel "x"
+set ylabel "y"
+set key noenhanced
+set key bottom
+set grid
+set tics out
+set title "Least squares fit B"
+
+plot 'Data.txt' using 4:5:6 with errorbars title "Data points", \
+'fit2.txt' using 1:2 with lines title "Least squares fit", \
+'fit2.txt' using 1:3 with lines title "Least squares fit upper", \
+'fit2.txt' using 1:4 with lines title "Least squares fit lower",
+
+

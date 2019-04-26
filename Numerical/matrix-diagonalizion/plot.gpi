@@ -1,0 +1,10 @@
+set terminal svg background "white"
+set output "plot.svg"
+set xlabel "Matrix size"
+set ylabel "Diagonalization time seconds"
+set key noenhanced
+set key bottom
+set grid
+set tics out
+
+plot 'time.txt' using 1:2
