@@ -1,0 +1,46 @@
+This is the INT_MAX value: 2147483647
+My max int with while:  2147483647
+My max int with for:  2147483647
+My max int with do while: 2147483647
+
+This is the INT_MIN value: -2147483648
+My min int with while: -2147483648
+My min int with for: -2147483648
+My min int with do while: -2147483648
+
+This is FLT_EPSILON: 1.19209e-07
+This is DBL_EPSILON: 2.22045e-16
+This is LDBL_EPSILON: 1.0842e-19
+
+Exercise 1
+
+For loops 
+Float: 1.19209e-07
+Double: 2.22045e-16
+Long double : 1.0842e-19
+
+While 
+Float: 1.19209e-07
+Double: 2.22045e-16
+Long double: 1.0842e-19
+
+Do while 
+Float: 1.19209e-07
+Double: 2.22045e-16
+Long double 1.0842e-19
+
+Exercise 2
+
+Sum_up_float: 15.403683
+Sum_down_float: 17.307919
+The smallest values are added first and gives the more precise result as there is less round off error. The harmonic series does not converge.
+
+Sum_up_double: 21.3716
+Sum_down_double: 21.3716
+
+With double precision we get a higher values due to less round off error.
+The sum for up and down are now equal because of double precision.
+EXERCISE 3:
+
+The function equal returns 1 or 0 depending on values a,b,tau and epsilon
+For example for the numbers 1,2,3,4 it returns 1

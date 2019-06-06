@@ -1,0 +1,23 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\begin{document}
+\title{Exercise 28.}
+\author{Peter Mosegaard 201507799}
+\maketitle
+In this problem I will diagonalize and find the eigenvalues of the matrix
+\begin{equation}
+A=\begin{pmatrix}
+x & 1 \\
+1 & -x
+\end{pmatrix}.
+\end{equation}
+I will use the GSL library function Singular Value Decomposition to diagonalize A and the Real Symmetric Matrices function to find the eigenvalues of A. The eigenvalues of A can be seen as a function of x in figure \ref{f1}.
+
+\begin{figure}[h]
+\include{plot}
+\label{f1}
+\caption{This is the plot of the eigenvalues for matrix A as a function of x.}
+\end{figure}
+
+\end{document}

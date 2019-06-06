@@ -1,0 +1,12 @@
+CFLAGS = -Wall -std=gnu99
+CFLAGS += $$(gsl-config --cflags)
+LDLIBS += $$(gsl-config --libs)
+
+all: output
+	cat $@
+
+output: main
+	./main > >$
+
+clean:
+	$RM main output

@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<math.h
+
+
+double mysin(double);
+
+int main(void)
+{
+for( double x=(-10); x<10; x+= 0.2){
+	printf(" %g %g \n", x, mysin(x));
+}
+return 0;
+}
+

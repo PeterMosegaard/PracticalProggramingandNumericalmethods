@@ -1,0 +1,10 @@
+set terminal png background "white"
+set output "plot.png"
+set xlabel "x"
+set ylabel "y"
+set key noenhanced
+set key bottom
+set grid
+set tics out
+
+plot 'out.txt' with lines title 'Error function'
