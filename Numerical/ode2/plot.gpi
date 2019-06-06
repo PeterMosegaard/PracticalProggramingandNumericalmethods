@@ -1,0 +1,14 @@
+set terminal svg background "white"
+set output "plot1.svg"
+set xlabel "x"
+set ylabel "y"
+set key noenhanced
+set key top left
+set grid
+set tics out
+set title "Orbital motion"
+
+f(x)=exp(x)-1
+
+plot [0:5] f(x) linewidth 2 dashtype (10,20),\
+'out.txt' using 1:2 with lines

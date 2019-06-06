@@ -1,0 +1,11 @@
+set terminal svg background "white"
+set output "plot.svg"
+set xlabel "x"
+set ylabel "y"
+set key noenhanced
+set key top
+set grid
+set tics out
+set title "Least squares fit"
+
+plot 'fit.txt' using 1:2 title "Quasi-newton fit" with lines, 'Data.txt' using 1:2:3 with errorbars title "Data points"

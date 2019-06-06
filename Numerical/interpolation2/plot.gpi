@@ -1,0 +1,14 @@
+set terminal svg background "white"
+set output "lspline.svg"
+set xlabel "x"
+set ylabel "y"
+set key noenhanced
+set key bottom
+set grid
+set tics out
+set title "Linear Spline of f(x)=x²"
+
+plot 'linear.txt' using 1:2 title "Data points", \
+'' using 1:3 with lines title "Linear spline", \
+'' using 1:4 with points title "Linear spline integrator from 0 to x", \
+'' using 1:5 w l ls 2 title "Analytical integral from 0 to x"

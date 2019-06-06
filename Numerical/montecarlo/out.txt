@@ -1,0 +1,18 @@
+PART A:
+
+The integral exp(-x*x-y*y) from x=-1 to x=1 and y=-1 to y=1 is evaluated samlping N=10000 points:
+Result=2.23073
+Error=0.00872375
+Exact=
+2.23099
+The integral (1/PI^3)*(1-cos(x)cos(y)cos(z))^-1 from x=0 to x=PI, y=0 to y=PI and z=0 to z=PI is evaluated samlping N=1000000 points:
+Result=1.38094
+Error=0.00477678
+Exact=
+1.393203929687..
+
+PART B:
+
+The error of the integral of exp(-x*x-y*y) from x=-1 to x=1
+and y=-1 to y=1 is plot as a function of the points sampled. The plot is shown in plot.svg with a a1/sqrt(N) fit. It can be seen that the error follows the O(1/sqrt(N)) behavior as expected.
+The coefficient a1 is determined as a1=0.865. The details of the fit can be seen in fit.log

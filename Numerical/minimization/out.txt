@@ -1,0 +1,24 @@
+EXERCISE A
+
+Rosenbrock function: Initial guess (x,y)=(5,5).
+Minimum found at (x,y)=(1,1) in 29 steps.
+
+Himmelblau function: Initial guess (x,y)=(5,0).
+Minimum found at (x,y)=(3.58443,-1.84813) in 23 steps.
+
+EXERCISE B:
+
+I will provide the gradient and the function.
+
+Rosenbrock function, quasi-newton method: Initial guess (x,y)=(5,5).
+Minimum found at (x,y)=(0.999992,0.999984) in 11845 steps.
+In the root finding exercise the minimum was found in 5267 steps with a numerical jacobian and in 5257 steps with an analytical jacobian.
+
+Himmelblau function, quasi newton method: Initial guess (x,y)=(5,0).
+Minimum found at (x,y)=(3.58443,-1.84813) in 61 steps.
+In the root finding exercise the minimum was found in 7 steps with a numerical jacobian and in 8 steps with an analytical jacobian.
+
+It seems that providing the gradients reduce the amount of steps however the calculations of these may still be more time consuming
+
+Fitting to experimental data using the quasinewton method.The coefficients A,B and T are found A=3.55702, B=1.23192 and T=3.20543 in 308 steps.
+The plot can be seen in plot.svg

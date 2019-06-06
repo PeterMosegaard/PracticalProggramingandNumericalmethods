@@ -1,0 +1,69 @@
+PART A:
+
+Integrating sqrt(x) from 0 to 1:
+Result=0.6666809328937376
+Error=0.0000332605324259
+Evaluations=19
+
+Integrating 1/sqrt(x) from 0 to 1:
+Result=1.9999973879640278
+Error=0.0000119752106863
+Evaluations=8588
+
+Integrating ln(x)/sqrt(x) from 0 to 1:
+Result=-3.9999983489902089
+Error=0.0000327215553663
+Evaluations=23573
+
+Integrating 4*sqrt(1-(1-x)²) from 0 to 1:
+Result=3.1415926535897931
+Error=0.0000000000000000
+Evaluations=1.26335e+06
+
+PART B:
+
+The Clenshaw Curtis transformation is now applied
+
+Integrating 1/sqrt(x) from 0 to 1:
+Result=0.6666668380254832
+Evaluations=1.26357e+06
+
+Integrating ln(x)/sqrt(x) from 0 to 1:
+Result=1.9999999999376401
+Evaluations=1.26374e+06
+
+The Clenshaw Curtis transformation does seem to improve the evaluation of the integrals.
+
+Integrating 1/sqrt(x) from 0 to 1 using GSL qags adaptive integrator:
+Result=0.6666666931246031
+Subdivisions=6
+
+Integrating ln(x)/sqrt(x) from 0 to 1 using GSL qags adaptive integrator:
+Result=1.9999999999999984
+Subdivisions=6
+
+PART C:
+
+Integrating exp(-x*x) from -INFINITY to INFINITY using a variable transformation:
+Result=1.7724538132905430
+Evaluations=1.26406e+06
+
+Integrating exp(-x*x) from 0 to INFINITY using a variable transformation:
+Result=0.8862083787433619
+Evaluations=1.2643e+06
+
+Integrating exp(-x*x) from -INFINITY to 0 using a variable transformation:
+Result=0.8862083787433619
+Evaluations=1.26453e+06
+
+Integrating exp(-x*x) from -INFINITY to INFINITY using GSL qagi adaptive integrator:
+Result=1.7724538509067373
+Subdivisions=3
+
+Integrating exp(-x*x) from 0 to INFINITY using GSL qagiu adaptive integrator:
+Result=0.8862269254533687
+Subdivisions=3
+
+Integrating exp(-x*x) from -INFINITY to 0 using GSL qagil adaptive integrator:
+Result=0.8862269254533687
+Subdivisions=3

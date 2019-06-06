@@ -1,0 +1,17 @@
+set terminal svg background "white"
+set output "plot.svg"
+set xlabel "N"
+set ylabel "Error"
+set key noenhanced
+set key top
+set grid
+set tics out
+set title "Error of the integral of exp(-x*x-y*y) sampled points N"
+
+f(x)=a1/sqrt(x)
+a1=0.5;
+
+fit f(x) 'error.txt' using 1:2 via a1
+
+plot 'error.txt' using 1:2 title "Error as a function of N",f(x) title "a1/sqrt(x)"
+
