@@ -24,7 +24,7 @@ FILE*fp;
 
 fp=fopen("time.txt","w+");
 
-for(int m=1;m<200;m++){
+for(int m=1;m<100;m++){
 
 gsl_matrix*A=gsl_matrix_alloc(m,m);
 gsl_matrix*V=gsl_matrix_alloc(m,m);
@@ -147,7 +147,7 @@ gsl_matrix_free(NBB);
 gsl_vector_free(eBB);
 
 
-printf("\nI now print the amount of sweeps to fully diagonalize a symmetric 200x200 matrix using cyclic sweeps\nand the amount of sweeps to only get the lowest eigenvalue from the first rows.\n");
+printf("\nI now print the amount of sweeps to fully diagonalize a symmetric 100x100 matrix using cyclic sweeps\nand the amount of sweeps to only get the lowest eigenvalue from the first rows.\n");
 int y=200;
 
 gsl_matrix*ABBBB=gsl_matrix_alloc(y,y);
@@ -170,8 +170,8 @@ gsl_matrix_memcpy(ABBBBB,ABBBB);
 
 
 
-printf("Sweeps to fully diagonalize a 200x200 matrix: %d\n",jacobi(ABBBB,VBBBB,eBBBB));
-printf("Sweeps to only find the lowest eigenvalue in a 200x200 matrix: %d\nIt is seen that for large matrices it is faster if one is only interested in a certain amount of eigenvalues.\n\n",jacobi_n(ABBBBB,VBBBBB,eBBBBB,1));
+printf("Sweeps to fully diagonalize a 100x100 matrix: %d\n",jacobi(ABBBB,VBBBB,eBBBB));
+printf("Sweeps to only find the lowest eigenvalue in a 100x100 matrix: %d\nIt is seen that for large matrices it is faster if one is only interested in a certain amount of eigenvalues.\n\n",jacobi_n(ABBBBB,VBBBBB,eBBBBB,1));
 
 
 gsl_matrix_free(ABBBB);

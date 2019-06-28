@@ -15,7 +15,7 @@ t[i]=i;
 p[i]=cos(i);
 };
 
-printf("PART A: Linear spline interpolation\n\nThe function x² has been interpolated using linear spline interpolation.\nThe plot with integral can be seen in lspline.svg.\n");
+printf("PART A: Linear spline interpolation\n\nThe function cos(x) has been interpolated using linear spline interpolation.\nThe plot with integral can be seen in lspline.svg.\n");
 
 FILE*line;
 
@@ -71,7 +71,7 @@ double dz=0.05;
 fclose(quad);
 qspline_free(Q);
 
-printf("\nPART C: Cubic spline:\n\n");
+printf("\nPART C: Cubic spline:\n\nCubic spline has been tested on cos(x). The plot can be seen in cspline.svg.\n");
 
 FILE*cubic;
 

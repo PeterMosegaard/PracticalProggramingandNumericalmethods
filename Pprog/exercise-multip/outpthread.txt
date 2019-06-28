@@ -1,0 +1,2 @@
+Value of pi from pthread: 3.14496.
+The file plot.svg shows the convergence of pi as a function of N.

@@ -1,6 +1,6 @@
 PART A: Linear spline interpolation
 
-The function x² has been interpolated using linear spline interpolation.
+The function cos(x) has been interpolated using linear spline interpolation.
 The plot with integral can be seen in lspline.svg.
 
 PART B: Quadratic spline interpolation
@@ -10,3 +10,4 @@ It can be seen in qspline.svg.
 
 PART C: Cubic spline:
 
+Cubic spline has been tested on cos(x). The plot can be seen in cspline.svg.

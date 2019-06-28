@@ -3,13 +3,13 @@ LDLIBS = $$(gsl-config --libs) -Wall
 
 .PHONEY: all
 
-all: out1.txt ExerciseA.txt plot.svg
+all: out1.txt Exercise1.txt plot.svg
 
 plot.svg: Data.txt out1.txt plot.gpi	
 	gnuplot plot.gpi
 
-ExerciseA.txt: main
-	./main > ExerciseA.txt
+Exercise1.txt: main
+	./main > Exercise1.txt
 
 Data.txt out1.txt: main1
 	./main1 > out1.txt

@@ -47,7 +47,7 @@ do{ changed=0; sweeps++; int p,q;
 return sweeps;
 }
 
-/* This function is the same as before but does only cyclic sweeps until the off diagonals of the first  n are eliminated*/
+/* This function is the same as before but does only cyclic sweeps until the off diagonals of the first n rows are eliminated*/
 int jacobi_n(gsl_matrix*A,gsl_matrix*V, gsl_vector*e, int n_val){
 int changed, sweeps=0, n=A->size1;
 for(int i=0;i<n;i++)gsl_vector_set(e,i,gsl_matrix_get(A,i,i));

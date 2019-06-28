@@ -7,5 +7,5 @@ set key bottom
 set grid
 set tics out
 
-plot [0:1000][3:3.3]"<(sed -n '1,1000p' out.txt)" using 1:2 title "Pi vs n"
+plot [0:1000][3:3.3]"<(sed -n '1,1000p' pthreaddata.txt)" using 1:2 title "Pi vs n"
 

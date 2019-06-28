@@ -42,7 +42,7 @@ double in2=s.in;
 
 double mpi=4*(in1+in2)/(2*100000);
 
-printf("%g \n", mpi);
+printf("Value of pi from pthread: %0.16g.\nThe file plot.svg shows the convergence of pi as a function of N.\n", mpi);
 
 return 0;
 

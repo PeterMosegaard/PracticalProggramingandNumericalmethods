@@ -47,7 +47,7 @@ double in2=s.in;
 
 double mpi=4*(in1+in2)/(2*100000);
 
-printf("%g \n", mpi);
+printf("Value of pi from OpenMP: %g \n", mpi);
 
 return 0;
 

@@ -8,7 +8,6 @@ double
 my_f (const gsl_vector *v, void *params)
 {
   double x, y;
-/*  double *p = (double *)params; */
 
   x = gsl_vector_get(v, 0);
   y = gsl_vector_get(v, 1);
@@ -16,13 +15,11 @@ my_f (const gsl_vector *v, void *params)
   return (1-x)*(1-x)+100*(y-x*x)*(y-x*x);
 }
 
-/* The gradient of f, df = (df/dx, df/dy). */
 void
 my_df (const gsl_vector *v, void *params,
        gsl_vector *df)
 {
   double x, y;
-/*  double *p = (double *)params;*/
 
   x = gsl_vector_get(v, 0);
   y = gsl_vector_get(v, 1);
@@ -31,7 +28,6 @@ my_df (const gsl_vector *v, void *params,
   gsl_vector_set(df, 1, 200*(y-x*x));
 }
 
-/* Compute both f and df together. */
 void
 my_fdf (const gsl_vector *x, void *params,
         double *f, gsl_vector *df)
@@ -50,9 +46,6 @@ main (void)
   const gsl_multimin_fdfminimizer_type *T;
   gsl_multimin_fdfminimizer *s;
 
-  /* Position of the minimum (1,2), scale factors
-     10,20, height 30. */
-  /* double par[5] = { 1.0, 2.0, 10.0, 20.0, 30.0 }; */
 
   gsl_vector *x;
   gsl_multimin_function_fdf my_func;
@@ -61,9 +54,7 @@ main (void)
   my_func.f = my_f;
   my_func.df = my_df;
   my_func.fdf = my_fdf;
-  /*my_func.params = par;*/
 
-  /* Starting point, x = (5,7) */
   x = gsl_vector_alloc (2);
   gsl_vector_set (x, 0, 0);
   gsl_vector_set (x, 1, 0);

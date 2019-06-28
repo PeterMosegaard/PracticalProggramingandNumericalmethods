@@ -26,40 +26,40 @@ PART B:
 
 A random matrix A is generated
 A=
-0.308858 0.689064 0.385187 0.202248 0.334971 
-0.689064 0.713356 0.973302 0.931523 0.805133 
-0.385187 0.973302 0.342705 0.508847 0.337424 
-0.202248 0.931523 0.508847 0.184839 0.973571 
-0.334971 0.805133 0.337424 0.973571 0.922517 
+0.431243 0.318017 0.609672 0.839900 0.833349 
+0.318017 0.354201 0.786438 0.536763 0.160538 
+0.609672 0.786438 0.806719 0.629671 0.564714 
+0.839900 0.536763 0.629671 0.257776 0.934959 
+0.833349 0.160538 0.564714 0.934959 0.320976 
 
 The off-diagonal elements are eliminated in the first row D=V^T*A*V
 D=
--0.699552 -0.000000 0.000000 -0.000000 0.000000 
--0.000000 1.391263 0.933681 0.579731 0.910412 
-0.000000 0.933681 0.480239 0.593193 0.449928 
--0.000000 0.579731 0.593193 0.336717 0.961186 
-0.000000 0.910412 0.449928 0.961186 0.963609 
+-0.738042 0.000000 -0.000000 -0.000000 -0.000000 
+0.000000 0.800163 0.984051 0.690885 0.857363 
+-0.000000 0.984051 0.853082 0.430311 0.549507 
+-0.000000 0.690885 0.430311 0.786915 0.957475 
+-0.000000 0.857363 0.549507 0.957475 0.468797 
 
 The first diagonal element should be equal to the first value in the following vector:
--0.699552 1.39126 0.480239 0.336717 0.963609 
+-0.738042 0.800163 0.853082 0.786915 0.468797 
 
 The off-diagonal elements are eliminated in the first two rows D=V^T*A*V
 D=
--0.699552 0.000000 0.000000 0.000000 0.000000 
-0.000000 -0.487347 0.000000 -0.000000 -0.000000 
-0.000000 0.000000 1.969651 0.716752 1.074124 
-0.000000 -0.000000 0.716752 0.535199 0.763890 
-0.000000 -0.000000 1.074124 0.763890 1.154325 
+-0.738042 0.000000 0.000000 -0.000000 0.000000 
+0.000000 -0.418106 0.000000 0.000000 -0.000000 
+0.000000 0.000000 1.843113 0.780952 0.973566 
+-0.000000 0.000000 0.780952 0.901478 0.876651 
+0.000000 -0.000000 0.973566 0.876651 0.582472 
 
 The first two diagonal elements should be equal to the first two values in the vector
--0.699552 -0.487347 1.96965 0.535199 1.15433 
+-0.738042 -0.418106 1.84311 0.901478 0.582472 
 The angle is decided by tan(2*phi)=2*Aqp/(Aqq-App). If Aqq>App the angle will be small and the dominant term in the rotation matrix will be the cosine corresponding to an identity operation.
 If App>Aqq we will interchange the values leading to smaller values on the upper diagonals
 We can get the higher eigenvalues on upper diagonals by calculating the angle as tan(2*phi)=-2*Aqp/(-Aqq+App).
 
-I now print the amount of sweeps to fully diagonalize a symmetric 200x200 matrix using cyclic sweeps
+I now print the amount of sweeps to fully diagonalize a symmetric 100x100 matrix using cyclic sweeps
 and the amount of sweeps to only get the lowest eigenvalue from the first rows.
-Sweeps to fully diagonalize a 200x200 matrix: 50
-Sweeps to only find the lowest eigenvalue in a 200x200 matrix: 21
+Sweeps to fully diagonalize a 100x100 matrix: 35
+Sweeps to only find the lowest eigenvalue in a 100x100 matrix: 21
 It is seen that for large matrices it is faster if one is only interested in a certain amount of eigenvalues.
 
