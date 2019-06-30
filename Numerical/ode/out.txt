@@ -1,2 +1,4 @@
-The system of ODE's is solved for the orbital motion of a planet: y0' = y1, y1' = 1-y0+ε*y0*y0. The initial conditions are y(0)=1 and y'(0)=-0.8 with epsilon=0.01.
+PART A AND B:
+
+The Runge-Kutta RK4 method is implemented. The system of ODE's is solved for the orbital motion of a planet: y0' = y1, y1' = 1-y0+ε*y0*y0 with absolute and relative precision 1e-6. The initial conditions are y(0)=1 and y'(0)=-0.8 with epsilon=0.01.
 The path is stored and can be seen in 'ode.txt' [t,y1,y2]. The plot is shown in plot.svg.

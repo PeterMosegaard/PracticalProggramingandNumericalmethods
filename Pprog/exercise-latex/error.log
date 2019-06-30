@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.13)  13 MAR 2019 18:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.6.19)  29 JUN 2019 17:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -47,7 +47,7 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 \Gin@req@height=\dimen103
 \Gin@req@width=\dimen104
 )
-(./error.aux)
+(./error.aux (./plot.aux))
 \openout1 = `error.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
@@ -142,26 +142,43 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 LaTeX Warning: No \author given.
 
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 10.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 10.
+\openout2 = `plot.aux'.
+
+(./plot.tex
+\plotpoint=\box27
+) [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-
-] (./error.aux) ) 
+]
+(./error.aux (./plot.aux)) ) 
 Here is how much of TeX's memory you used:
- 1430 strings out of 494923
- 20453 string characters out of 6180742
- 70445 words of memory out of 5000000
- 4758 multiletter control sequences out of 15000+600000
- 6675 words of font info for 24 fonts, out of 8000000 for 9000
+ 1447 strings out of 494923
+ 20610 string characters out of 6180742
+ 103703 words of memory out of 5000000
+ 4767 multiletter control sequences out of 15000+600000
+ 7280 words of font info for 26 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 41i,7n,25p,272b,215s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-Output written on error.pdf (1 page, 30955 bytes).
+ 41i,6n,25p,272b,195s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on error.pdf (1 page, 97482 bytes).
 PDF statistics:
- 20 PDF objects out of 1000 (max. 8388607)
- 13 compressed objects within 1 object stream
+ 48 PDF objects out of 1000 (max. 8388607)
+ 34 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

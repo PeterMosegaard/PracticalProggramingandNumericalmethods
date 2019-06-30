@@ -6,8 +6,7 @@
 #include<gsl/gsl_errno.h>
 #include"gslr.h"
 
-
-int f_gsl(gsl_vector*x, void*params, gsl_vector*fx){
+int f_gsl(const gsl_vector*x, void*params, gsl_vector*fx){
 
 double A=10000.0;
 
@@ -19,7 +18,7 @@ double A=10000.0;
 	return GSL_SUCCESS;
 }
 
-int rosen_gsl(gsl_vector* x, void* params, gsl_vector* fx) {
+int rosen_gsl(const gsl_vector* x, void* params, gsl_vector* fx) {
 
 	double x0 = gsl_vector_get(x, 0);
 	double x1 = gsl_vector_get(x, 1);
@@ -29,7 +28,7 @@ int rosen_gsl(gsl_vector* x, void* params, gsl_vector* fx) {
 	return GSL_SUCCESS;
 }
 
-int him_gsl(gsl_vector* x, void* params, gsl_vector* fx) {
+int him_gsl(const gsl_vector* x, void* params, gsl_vector* fx) {
 
 	double x0 = gsl_vector_get(x, 0);
 	double x1 = gsl_vector_get(x, 1);

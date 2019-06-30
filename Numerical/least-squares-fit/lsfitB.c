@@ -28,13 +28,14 @@ gsl_matrix_set(A,i,j,funs(j,gsl_vector_get(xv,i))/gsl_vector_get(dyv,i));
 }
 }
 
-
+gsl_blas_dgemm(CblasTrans,CblasNoTrans,1,A,A,0,C);
 qr_gs_decomp(A,R);
 qr_gs_solve(A,R,b,cv);
-gsl_matrix_set_identity(I);
-qr_gs_inv(I,R,C);
 
-gsl_blas_dgemm(CblasNoTrans,CblasTrans,1,C,C,0,E);
+qr_gs_decomp(C,R);
+
+qr_gs_inv(C,R,E);
+
 
 gsl_matrix_free(A);
 gsl_vector_free(b);

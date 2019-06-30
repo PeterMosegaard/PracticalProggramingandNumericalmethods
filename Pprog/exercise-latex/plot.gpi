@@ -1,10 +1,12 @@
-set terminal png background "white"
-set output "plot.png"
+set terminal latex
+set output "plot.tex"
 set xlabel "x"
-set ylabel "y"
+set ylabel "erf(x)"
+set size 4/5., 2/3.
 set key noenhanced
 set key bottom
 set grid
 set tics out
 
-plot 'out.txt' with lines title 'Error function'
+plot 'data.txt' using 1:2 with lines 'Error function'
+

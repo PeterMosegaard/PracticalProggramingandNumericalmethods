@@ -44,7 +44,7 @@ fpp=fopen("ode.txt","w+");
 	for(int o=0;o< yth->size;o++){
 	fprintf(fpp,"%g ",gsl_vector_get(yth,o));
 	}
-	fprintf(fpp,"\n");
+	fprintf(fpp,"%0.16g\n",gsl_vector_get(err,0));
 
 	}
 
@@ -63,6 +63,11 @@ int n=yt->size;
 gsl_vector*k=gsl_vector_alloc(n);
 gsl_vector*k0=gsl_vector_alloc(n);
 gsl_vector*k1=gsl_vector_alloc(n);
+
+gsl_vector*k12=gsl_vector_alloc(n);
+gsl_vector*k11=gsl_vector_alloc(n);
+gsl_vector*ktemp2=gsl_vector_alloc(n);
+
 gsl_vector*k2=gsl_vector_alloc(n);
 gsl_vector*k3=gsl_vector_alloc(n);
 gsl_vector*kerr=gsl_vector_alloc(n);
@@ -77,6 +82,16 @@ gsl_vector_scale(ktemp,h*0.5);
 gsl_vector_add(ktemp,yt);
 f(t+0.5*h,ktemp,k1);
 
+gsl_vector_memcpy(ktemp2,k0);
+gsl_vector_scale(ktemp2,h*0.5);
+gsl_vector_add(ktemp2,yt);
+f(t+0.5*h,ktemp2,k12);
+
+gsl_vector_memcpy(ktemp2,k0);
+gsl_vector_scale(ktemp2,h);
+gsl_vector_add(ktemp2,yt);
+f(t+h,ktemp2,k11);
+
 gsl_vector_memcpy(ktemp,k1);
 gsl_vector_scale(ktemp,h*0.5);
 gsl_vector_add(ktemp,yt);
@@ -87,22 +102,26 @@ gsl_vector_scale(ktemp,h);
 gsl_vector_add(ktemp,yt);
 f(t+h,ktemp,k3);
 
-double scale1=1.0/6;
-double scale2=1.0/3;
+double scale1=1.0/6.0;
+double scale2=1.0/3.0;
+double scale3=4.0/6.0;
 
 gsl_vector_scale(k0,scale1);
 gsl_vector_scale(k1,scale2);
 gsl_vector_scale(k2,scale2);
 gsl_vector_scale(k3,scale1);
 
+gsl_vector_scale(k12,scale3);
+gsl_vector_scale(k11,scale1);
+
 gsl_vector_add(k,k0);
 gsl_vector_add(k,k1);
 gsl_vector_add(k,k2);
-
-gsl_vector_memcpy(kerr,k);
-
 gsl_vector_add(k,k3);
 
+gsl_vector_memcpy(kerr,k0);
+gsl_vector_add(kerr,k12);
+gsl_vector_add(kerr,k11);
 
 gsl_vector_scale(kerr,h);
 gsl_vector_scale(k,h);
@@ -126,6 +145,9 @@ gsl_vector_free(k3);
 gsl_vector_free(ktemp);
 gsl_vector_free(kerr);
 gsl_vector_free(ytherr);
+gsl_vector_free(k12);
+gsl_vector_free(k11);
+gsl_vector_free(ktemp2);
 
 }
 
@@ -151,7 +173,7 @@ gsl_vector_set(dydt,1,1-y0+eps*y0*y0);
 
 void integral(double t, gsl_vector*y, gsl_vector*dydt){
 
-gsl_vector_set(dydt,0,t*t);
+gsl_vector_set(dydt,0,exp(t));
 
 }
 

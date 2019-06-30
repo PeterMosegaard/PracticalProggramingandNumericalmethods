@@ -3,9 +3,9 @@ LDLIBS= $$(gsl-config --libs) -lm
 
 .PHONEY: all
 
-all: errorfunc.pdf plot.png
+all: errorfunc.pdf main
 
-plot.png: plot.gpi
+plot.tex: plot.gpi
 	gnuplot plot.gpi
 
 errorfunc.pdf: error.tex

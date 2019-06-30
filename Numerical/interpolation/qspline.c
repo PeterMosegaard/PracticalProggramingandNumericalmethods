@@ -1,6 +1,8 @@
-#include <stdlib.h>
-#include <assert.h>
-#include "qspline.h"
+#include<stdlib.h>
+#include<math.h>
+#include<assert.h>
+#include"interpolation.h"
+
 qspline* qspline_alloc(int n,double* x,double* y){
 	qspline* s = malloc(sizeof(qspline));
 	s->b = malloc((n-1)*sizeof(double));
@@ -38,7 +40,7 @@ double qspline_eval(qspline *s, double z){
 		else j=m;
 	}
 	double h=z-s->x[i];
-	
+
 	return s->y[i]+h*(s->b[i]+h*s->c[i]);
 }
 
@@ -48,38 +50,32 @@ void qspline_free(qspline *s){
 
 double qspline_int(qspline*s,double z){
 
-double sum=0;
-double dz=0.01;
-for(double i=s->x[0];i<z;i+=dz){
-        assert(z>=s->x[0] && z<=s->x[s->n-1]);
-        int i=0, j=s->n-1;
-        while(j-i>1){
-                int m=(i+j)/2;
-                if(z>s->x[m]) i=m;
-                else j=m;
-        }
+double *x=s->x;
+double *a=s->y;
+double *b=s->b;
+double *c=s->c;
 
-double up=s->y[i]*(z+dz)  + 0.5*(z+dz)*(z+dz)*s->b[i] - (z+dz)*s->x[i]*s->b[i]+ s->c[i]*(  (z+dz)*(z+dz)*(z+dz)/3     +(z+dz)*s->x[i]*s->x[i]    -  (z+dz)*(z+dz)*s->x[i]                 );
+double sum;
+int i;
 
-double low=s->y[i]*z  +0.5*z*z*s->b[i] - z*s->x[i]*s->b[i]+ s->c[i]*(z*z*z/3     +z*s->x[i]*s->x[i]    -z*z*s->x[i]                       );
+for(i=0;x[i+1]<z;i++){
+	sum+=a[i]*(x[i+1]-x[i])+b[i]*pow(x[i+1]-x[i],2)/2+c[i]*pow(x[i+1]-x[i],3)/3;
+	}
 
-sum+=up-low;
-
-}
-
+	sum+=a[i]*(z-x[i])+b[i]*pow(z-x[i],2)/2+c[i]*pow(z-x[i],2)/3;
 return sum;
 
 }
 
 double qspline_der(qspline*s,double z){
 
-        assert(z>=s->x[0] && z<=s->x[s->n-1]);
-        int i=0, j=s->n-1;
-        while(j-i>1){
-                int m=(i+j)/2;
-                if(z>s->x[m]) i=m;
-                else j=m;
-}
+assert(z>=s->x[0] && z<=s->x[s->n-1]);
+	int i=0, j=s->n-1;
+	while(j-i>1){
+		int m=(i+j)/2;
+		if(z>s->x[m]) i=m;
+		else j=m;
+	}
 double h=z-s->x[i];
 
 double der=s->b[i]+2*h*s->c[i];

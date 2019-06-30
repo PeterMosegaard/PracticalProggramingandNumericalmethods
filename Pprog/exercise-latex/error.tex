@@ -1,15 +1,32 @@
-\documentclass[twocolumn]{article}
+\documentclass[onecolumn]{article}
 \usepackage{graphicx}
 
 \begin{document}
 \title{The error function}
 \maketitle
+ 
+The error function is defined as:
 
+\begin{equation}
+erf(x)=\frac{1}{\sqrt{\pi}} \int^{x}_{-x} \exp{-t^2} dt=\frac{2}{\sqrt{2\pi}}\int_0^x \exp{-t^2} dt.
+\end{equation}
+The error function can be seen in figure \ref{1f}.
 
-The error function blah blah...
+\section{Derivative}
+The derivative of the error function follows from its definition
+\begin{equation}
+\frac{d}{dz}erf(z)=\frac{2}{\sqrt{\pi}}\exp{-z^2}
+\end{equation}
+The error function is an entire function - it has no singularities. The higher order derivatives are
 
-\begin{figure}
+\begin{equation}
+erf^{(k)}(z)=\frac{2(-1)^{k-1}}{\sqrt{\pi}} H_{k-1}(z)\exp{-z^2}, \quad k=1,2,...
+\end{equation}
+
+\begin{figure}[h]
+\include{plot}
+\label{1f}
+\caption{This is a plot of the error function.}
 \end{figure}
-
 
 \end{document}

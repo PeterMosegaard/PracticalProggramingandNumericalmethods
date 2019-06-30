@@ -5,9 +5,8 @@
 #include<gsl/gsl_matrix.h>
 #include<gsl/gsl_vector.h>
 #include"qr.h"
-
+#include"root.h"
 void numjacobian(void f(gsl_vector*x,gsl_vector*fx),gsl_matrix*J,gsl_vector*fx,gsl_vector*x,double dx);
-
 int newton(void f(gsl_vector*x,gsl_vector*fx),gsl_vector*x, double ds, double epsilon,int *fcalls){
 
 	int n=x->size;
@@ -55,7 +54,7 @@ gsl_matrix_free(J);
 gsl_vector_free(fx);
 gsl_vector_free(xt);
 gsl_vector_free(ft);
-
+gsl_vector_free(dx);
 return steps;
 
 }

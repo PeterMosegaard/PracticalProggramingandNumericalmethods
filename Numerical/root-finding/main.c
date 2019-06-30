@@ -7,19 +7,9 @@
 #include<gsl/gsl_multiroots.h>
 #include<gsl/gsl_errno.h>
 #include"gslr.h"
-
+#include"root.h"
 
 int vector_print(gsl_vector*x);
-
-void f(gsl_vector*x,gsl_vector*fx,gsl_matrix*J);
-int newton_with_jacobian(void f(gsl_vector*x,gsl_vector*fx,gsl_matrix*J),gsl_vector*x, double epsilon, int *fcalls);
-void rosen(gsl_vector*x,gsl_vector*fx,gsl_matrix*J);
-void himmelblau(gsl_vector*x,gsl_vector*fx,gsl_matrix*J);
-
-int newton(void f(gsl_vector*x,gsl_vector*fx),gsl_vector*x, double ds, double epsilon, int *fcalls);
-void rosenn(gsl_vector*x,gsl_vector*fx);
-void himmelblaun(gsl_vector*x,gsl_vector*fx);
-void fn(gsl_vector*x,gsl_vector*fx);
 
 int main(void){
 
@@ -167,7 +157,9 @@ printf("In %d iterations\n\n",iter);
 
 gsl_vector_free(x);
 
-printf("The gsl-root finder is faster for the systems of equations and the rosenbrock. For the himmelblau GSL uses more iterations possibly because we use gradients.");
+printf("The gsl-root finder is faster for the systems of equations and the rosenbrock. For the himmelblau GSL uses more\niterations possibly because i did not use a root finder using gradients.\n");
+
+printf("\nExercise C:\n\n");
 
 return 0;
 }

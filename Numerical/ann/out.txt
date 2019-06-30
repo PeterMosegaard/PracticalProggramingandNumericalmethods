@@ -1,0 +1,4 @@
+PART A AND B:
+
+ANN for interpolating a function. The neural network has been tested on the function f=x*x. The interpolation and the estimate of the derivative and antiderivative can be seen in plot.svg.
+A gaussian wavelet has been used a activation function.

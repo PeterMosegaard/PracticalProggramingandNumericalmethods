@@ -24,25 +24,16 @@ void lsfit(int m, double funs(int i, double x),gsl_vector*xv,gsl_vector*yv,gsl_v
 void svd(int m, double funs(int i,double x), gsl_vector*xv,gsl_vector*yv,gsl_vector*dyv,gsl_vector*cv,gsl_vector*D);
 
 int main(void){
+
 /* Data for part A*/
-/*	double x[]  ={0.1,  1.33   , 2.55   , 3.78 ,      5 ,   6.22 ,   7.45,    8.68,     9.9};
+	double x[]  ={0.1,  1.33   , 2.55   , 3.78 ,      5 ,   6.22 ,   7.45,    8.68,     9.9};
 	double y[] ={-15.3,0.32,    2.45,    2.75,    2.27,    1.35,   0.157,   -1.23,   -2.75};
-	double dy[] ={1.04,0.594,   0.983,   0.998,    1.11,   0.398,   0.535,   0.968,   0.478};
-*/
-
-	double x[] = {0.145,0.211,0.307,0.447,0.649,0.944,1.372,1.995,2.900};
-	double y[] = {9.235,7.377,6.460,5.555,5.896,5.673,6.964,8.896,11.355};
-	double dy[] = {0.359,0.505,0.403,0.683,0.605,0.856,0.351,1.083,1.002};
-
+	double dy[] ={1.04,0.594,   0.983,   0.998,    1.11,   0.698,   0.535,   0.968,   0.778};
 
 /*Data for part B*/
-/*	double x2[]={1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0};
+	double x2[]={1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0};
 	double y2[]={1.0, 3.0, 5.0, 6.0, 6.5, 6.7, 6.0, 4.0, 3.0};
-	double dy2[]={0.7, 0.5, 0.3, 0.2, 0.5, 0.2, 0.6, 0.2, 0.3};
-*/
-        double x2[] = {0.145,0.211,0.307,0.447,0.649,0.944,1.372,1.995,2.900};
-        double y2[] = {9.235,7.377,6.460,5.555,5.896,5.673,6.964,8.896,11.355};
-        double dy2[] = {0.359,0.505,0.403,0.683,0.605,0.856,0.351,1.083,1.002};
+	double dy2[]={0.7, 0.5, 0.22, 0.88, 0.5, 0.4, 0.9, 0.7, 0.1};
 
 	int n=sizeof(x)/sizeof(x[0]);
 	int n1=sizeof(x)/sizeof(x2[0]);
@@ -103,7 +94,7 @@ printf("PART B:\nplot2.svg shows the linear squares fit to the same data points 
 
 gsl_matrix*E=gsl_matrix_alloc(3,3);
 
-lsfitB(3,funs2,xv1,yv1,dyv1,cv1,E);
+lsfitB(3,funs,xv1,yv1,dyv1,cv1,E);
 
 printf("The covariance matrix is\nE=\n");
 matrix_print(E);
@@ -116,9 +107,9 @@ for(double i=gsl_vector_get(xv1,0);i<gsl_vector_get(xv1,n1-1);i+=0.01){
 double fi1=funs(0,i);
 double fi2=funs(1,i);
 double fi3=funs(2,i);
-double c1=gsl_vector_get(cv,0);
-double c2=gsl_vector_get(cv,1);
-double c3=gsl_vector_get(cv,2);
+double c1=gsl_vector_get(cv1,0);
+double c2=gsl_vector_get(cv1,1);
+double c3=gsl_vector_get(cv1,2);
 double ce1=sqrt(gsl_matrix_get(E,0,0));
 double ce2=sqrt(gsl_matrix_get(E,1,1));
 double ce3=sqrt(gsl_matrix_get(E,2,2));
@@ -166,8 +157,8 @@ return 0;
 
 double funs(int i, double x){
    switch(i){
-   case 0: return 1/x; break;
-   case 1: return 1.0;   break;
+   case 0: return 1.0/x; break;
+   case 1: return x*x;   break;
    case 2: return x;     break;
    default: {fprintf(stderr,"funs: wrong i:%d",i); return NAN;}
    }
@@ -175,9 +166,9 @@ double funs(int i, double x){
 
 double funs2(int i, double x){
    switch(i){
-   case 0: return 1/x; break;
-   case 1: return x;   break;
-   case 2: return 1;     break;
+   case 0: return 1.0/x; break;
+   case 1: return x*x;   break;
+   case 2: return x;     break;
    default: {fprintf(stderr,"funs: wrong i:%d",i); return NAN;}
    }
 }

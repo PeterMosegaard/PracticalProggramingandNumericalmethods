@@ -1,23 +1,23 @@
 PART A:
 plot.svg shows the least squares fit to the data points using a linear combination F(x)=c1*log(x)+c2*1+c3*x.
-The least squares fit gives the coefficients c1=0.946747, c2=2.30942, c3=2.94415
+The least squares fit gives the coefficients c1=-1.5386, c2=-0.162612, c3=1.30299
 PART B:
 plot2.svg shows the linear squares fit to the same data points with the upper and lower bounds for
 c1,c2 and c3 with the errors from the sqrt of the diagonal elements in the covariance matrix.
 The covariance matrix is
 E=
-0.013423 0.038803 -0.069977 
-0.038803 0.181527 -0.250345 
--0.069977 -0.250345 0.427479 
+0.457374 0.006921 -0.067517 
+0.006921 0.000193 -0.001790 
+-0.067517 -0.001790 0.016766 
 
 The coefficients are
 c=
-0.946747
-2.94415
-2.30942
+-1.76302
+-0.253224
+2.63394
 
 PART C:
 I use the same data points as from exercise A this time using singular value decomposition
-28.672
-6.8661
-3.8321
+-0.0404242
+-0.588503
+0.386768

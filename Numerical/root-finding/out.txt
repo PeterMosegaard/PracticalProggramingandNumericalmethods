@@ -67,4 +67,8 @@ x=
 -1.84813
 In 9 iterations
 
-The gsl-root finder is faster for the systems of equations and the rosenbrock. For the himmelblau GSL uses more iterations possibly because we use gradients.
+The gsl-root finder is faster for the systems of equations and the rosenbrock. For the himmelblau GSL uses more
+iterations possibly because i did not use a root finder using gradients.
+
+Exercise C:
+
