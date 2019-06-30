@@ -124,8 +124,13 @@ mprint(DD);
 
 qr_gs_inv(AA,RR,BB);
 
+
+
 gsl_blas_dgemm(CblasNoTrans, CblasNoTrans, 1.0, AAe,BB,0.0,DD);
-printf("B is calculated as the matrix inverse. Now checking that AB=I,\nAB=");
+printf("B is calculated as the matrix inverse.\nB=");
+mprint(BB);
+
+printf("Now checking that AB=I,\nAB=");
 mprint(DD);
 
 gsl_matrix_free(AA);
