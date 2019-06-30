@@ -52,10 +52,10 @@ gsl_blas_dgemm(CblasTrans,CblasNoTrans,1.0,G,A1,0.0,A2);
 
 //
 
-double Jqq=gsl_matrix_get(J,q,q);
-double Jpp=gsl_matrix_get(J,p,p);
-double Jqp=gsl_matrix_get(J,q,p);
-double Jpq=gsl_matrix_get(J,p,q);
+//double Jqq=gsl_matrix_get(J,q,q);
+//double Jpp=gsl_matrix_get(J,p,p);
+//double Jqp=gsl_matrix_get(J,q,p);
+//double Jpq=gsl_matrix_get(J,p,q);
 
 for(int i=0; i<m;i++){
 
@@ -101,7 +101,7 @@ gsl_matrix_free(J);
 return 0;
 
 }
-
+//Updates instead of matrix multiplication
 int twosidedjacobi2(gsl_matrix*A,gsl_matrix*V, gsl_matrix*U){
 
 int m=A->size1;
@@ -180,8 +180,6 @@ gsl_matrix_set(A,p,p,Jpp*App1+Jqp*Aqp1);
 gsl_matrix_set(A,q,q,Jqq*Aqq1+Jpq*Apq1);
 gsl_matrix_set(A,p,q,Jpp*Apq1+Jqp*Aqq1);
 gsl_matrix_set(A,q,p,Jqq*Aqp1+Jpq*App1);
-
-
 
 if(gsl_matrix_get(A,q,q) != aqq || gsl_matrix_get(A,p,p) != app){changed=1;}
 

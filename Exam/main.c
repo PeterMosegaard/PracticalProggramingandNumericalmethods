@@ -53,7 +53,7 @@ gsl_blas_dgemm(CblasTrans,CblasNoTrans,1.0,V,V,0.0,V1);
 printf("Checking that U^T U=I and V^T V=I:");
 printf("\nU^T U=\n");
 matrix_print(U1);
-printf("\nU^T U=\n");
+printf("\nV^T V=\n");
 matrix_print(V1);
 
 gsl_blas_dgemm(CblasNoTrans,CblasTrans,1.0,M,V,0.0,V1);
