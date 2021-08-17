@@ -1,1 +1,1 @@
-# PragProgNumMethods
+Exercises from the course "Practical programming and numerical methods". The exercises are solved using C and the structure of each solution can be seen in the makefile - a .txt (usually out.txt) file provides an answer to the exercise. The exercises can be found here http://62.107.14.89/~fedorov/old/prog-2019/numeric/.
