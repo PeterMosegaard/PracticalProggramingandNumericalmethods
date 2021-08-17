@@ -1,4 +1,1 @@
 # PragProgNumMethods
-# PracticalProgrammingandNumericalmethods
-# PracticalProggramingandNumericalmethods
-# PracticalProggramingandNumericalmethods
